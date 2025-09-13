@@ -33,9 +33,9 @@ public abstract class Vehicle
         this.currentMileage = mileage;
     }
 
-    abstract void move(double distance) throws InvalidOperationException;
-    abstract double calculateFuelEfficiency();
-    abstract double estimateJourneyTime(double distance);
+    public abstract void move(double distance) throws InvalidOperationException;
+    public abstract double calculateFuelEfficiency();
+    public abstract double estimateJourneyTime(double distance);
 
     public void displayInfo() {
         LoggerWriter.write(
