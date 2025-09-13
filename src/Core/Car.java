@@ -51,6 +51,7 @@ public class Car extends LandVehicle
         if (distance < 0)
             throw new InvalidOperationException("Distance cannot be smaller than zero");
         double consumed = consumeFuel(distance);
+        fuelLevel -= consumed;
         setCurrentMileage(getCurrentMileage() + distance);
         MessageWriter.write("Car id:" + getId() + " is Driving on road ...");
     }
@@ -82,7 +83,6 @@ public class Car extends LandVehicle
                     "Not enough fuel for car to travel " + distance +
                     "km needed:" + requiredFuel + ", has:" + fuelLevel
             );
-        fuelLevel -= requiredFuel;
         return requiredFuel;
     }
 

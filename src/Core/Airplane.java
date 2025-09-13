@@ -62,6 +62,7 @@ public class Airplane extends AirVehicle
         if (distance < 0)
             throw new InvalidOperationException("Distance cannot be smaller than zero");
         double consumed = consumeFuel(distance);
+        fuelLevel -= consumed;
         setCurrentMileage(getCurrentMileage() + distance);
         MessageWriter.write("Airplane id:" + getId() + " is “Flying at " + getMaxAltitude() + "...");
     }
@@ -93,7 +94,6 @@ public class Airplane extends AirVehicle
                     "Not enough fuel for airplane to travel " + distance +
                     "km needed:" + requiredFuel + ", has:" + fuelLevel
             );
-        fuelLevel -= requiredFuel;
         return requiredFuel;
     }
 

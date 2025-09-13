@@ -51,6 +51,7 @@ public class CargoShip extends WaterVehicle
         if (distance < 0)
             throw new InvalidOperationException("Distance cannot be smaller than zero");
         double consumed = consumeFuel(distance);
+        fuelLevel -= consumed;
         setCurrentMileage(getCurrentMileage() + distance);
         MessageWriter.write("CargoShip id:" + getId() + " is Sailing with cargo...");
     }
@@ -93,7 +94,6 @@ public class CargoShip extends WaterVehicle
                     "Not enough fuel for CargoShip to travel " + distance +
                     "km needed:" + requiredFuel + ", has:" + fuelLevel
             );
-        fuelLevel -= requiredFuel;
         return requiredFuel;
     }
 

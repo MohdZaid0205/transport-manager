@@ -61,6 +61,7 @@ public class Bus extends LandVehicle
         if (distance < 0)
             throw new InvalidOperationException("Distance cannot be smaller than zero");
         double consumed = consumeFuel(distance);
+        fuelLevel -= consumed;
         setCurrentMileage(getCurrentMileage() + distance);
         MessageWriter.write("Bus id:" + getId() + " is Transporting passengers and cargo...");
     }
@@ -92,7 +93,6 @@ public class Bus extends LandVehicle
                     "Not enough fuel for bus to travel " + distance +
                     "km needed:" + requiredFuel + ", has:" + fuelLevel
             );
-        fuelLevel -= requiredFuel;
         return requiredFuel;
     }
 
