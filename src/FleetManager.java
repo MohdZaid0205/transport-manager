@@ -116,8 +116,7 @@ public class FleetManager
 
         int maintenanceCount = 0;
         for (Vehicle v : fleet) {
-            if (v instanceof Maintainable) {
-                Maintainable m = (Maintainable) v;
+            if (v instanceof Maintainable m) {
                 if (m.needsMaintenance()) {
                     maintenanceCount++;
                 }
