@@ -84,8 +84,8 @@ public class Truck extends LandVehicle
         double requiredFuel = distance/calculateFuelEfficiency();
         if (fuelLevel <= requiredFuel)
             throw new InsufficientFuelException(
-                    "Not enough fuel for car to travel " + distance +
-                            "km needed:" + requiredFuel + ", has:" + fuelLevel
+                    "Not enough fuel for truck to travel " + distance +
+                    "km needed:" + requiredFuel + ", has:" + fuelLevel
             );
         fuelLevel -= requiredFuel;
         return requiredFuel;
