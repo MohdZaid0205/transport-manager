@@ -54,7 +54,7 @@ public class Airplane extends AirVehicle
     public void setCurrentCargo(int capacity) { currentCargo = capacity; }
 
 
-    // implementations for abstract class LandVehicle.
+    // implementations for abstract class AirVehicle.
 
     @Override
     public void move(double distance) throws InvalidOperationException, InsufficientFuelException
