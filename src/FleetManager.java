@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 public class FleetManager
 {
-    private ArrayList<Vehicle> fleet = new ArrayList<>();
+    public ArrayList<Vehicle> fleet = new ArrayList<>();
 
     // methods for manipulating fleet and query fleet.
 
