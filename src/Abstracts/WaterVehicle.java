@@ -30,6 +30,6 @@ public abstract class WaterVehicle extends Vehicle{
     public abstract void move(double distance) throws InvalidOperationException;
     public abstract double calculateFuelEfficiency();
 
-    public boolean isHasSail() { return hasSail; }
+    public boolean getHasSail() { return hasSail; }
     public void setHasSail(boolean sail) { hasSail = sail; }
 }
