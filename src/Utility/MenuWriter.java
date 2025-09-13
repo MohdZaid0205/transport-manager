@@ -13,7 +13,7 @@ public class MenuWriter
     public static void write(String message){
         System.out.println( BACKS + BLACK + "[ MEN ]" + CLEAN + ": " + message);
         for (int i = 0; i < menu.size(); i++) {
-            System.out.println("\t\t" + FORES + "{" + (i + 1) + "}" + CLEAN + ":" + menu.get(i));
+            System.out.println("\t\t" + FORES + "{\t" + (i + 1) + "\t}" + CLEAN + " : " + menu.get(i));
         }
     }
 }
