@@ -1,6 +1,7 @@
 package Abstracts;
 
 import Exceptions.InvalidIdentificationException;
+import Exceptions.InvalidOperationException;
 
 public abstract class WaterVehicle extends Vehicle{
     private boolean hasSail;
@@ -27,6 +28,6 @@ public abstract class WaterVehicle extends Vehicle{
     }
 
 
-    public abstract void move(double distance) throws InvalidIdentificationException;
+    public abstract void move(double distance) throws InvalidOperationException;
     public abstract double calculateFuelEfficiency();
 }
