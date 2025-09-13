@@ -1,12 +1,10 @@
 package Core;
 
 import Abstracts.LandVehicle;
-import Abstracts.Vehicle;
 import Exceptions.InsufficientFuelException;
 import Exceptions.InvalidIdentificationException;
 import Exceptions.InvalidOperationException;
 import Exceptions.OverloadException;
-import Interfaces.CargoCarrier;
 import Interfaces.FuelConsumable;
 import Interfaces.Maintainable;
 import Interfaces.PassengerCarrier;
@@ -21,18 +19,18 @@ public class Car extends LandVehicle
     private boolean maintenanceNeeded;
 
     /**
-     * ABC (Abstract Base Class) Vehicle to provide basic functionalities.
+     * Car is a "four wheeler" car and .
      *
      * @param id      : String used for identification of current Vehicle.
      * @param model   : String representing model of current Vehicle.
      * @param speed   : double value representing maximum speed of current Vehicle.
      * @param mileage : double value representing mileage of current Vehicle.
-     * @param wheels  : int value representing number of wheels in the vehicle.
      */
-    public Car(String id, String model, double speed, double mileage, int wheels)
+    public Car(String id, String model, double speed, double mileage)
             throws InvalidIdentificationException
     {
-        super(id, model, speed, mileage, wheels);
+        super(id, model, speed, mileage, 0x04);
+        maintenanceNeeded = mileage >= 10000;
     }
 
     // encapsulation for private properties, getters and setters.
@@ -54,10 +52,7 @@ public class Car extends LandVehicle
             throw new InvalidOperationException("Distance cannot be smaller than zero");
         double consumed = consumeFuel(distance);
         setCurrentMileage(getCurrentMileage() + distance);
-        MessageWriter.write(
-                "Car id:" + getId() +" is Driving on road ... consumed "
-                + consumed + "L of fuel to travel distance of " + distance + "km."
-        );
+        MessageWriter.write("Car id:" + getId() + " is Driving on road ...");
     }
 
     @Override
