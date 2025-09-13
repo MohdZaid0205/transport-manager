@@ -7,10 +7,10 @@ import Exceptions.InvalidIdentificationException;
 
 public abstract class Vehicle
 {
-    private String id;
-    private String model;
-    private double maxSpeed;
-    private double currentMileage;
+    protected String id;
+    protected String model;
+    protected double maxSpeed;
+    protected double currentMileage;
 
     /**
      * ABC (Abstract Base Class) Vehicle to provide basic functionalities.
@@ -22,7 +22,7 @@ public abstract class Vehicle
      *
      */
     public Vehicle(String id, String model, long speed, long mileage)
-    throws InvalidIdentificationException
+            throws InvalidIdentificationException
     {
         IdentityValidator.validate(id);
         IdentityValidator.insert(id);
