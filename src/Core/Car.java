@@ -48,9 +48,16 @@ public class Car extends LandVehicle
     // implementations for abstract class LandVehicle.
 
     @Override
-    public void move(double distance) throws InvalidOperationException
+    public void move(double distance) throws InvalidOperationException, InsufficientFuelException
     {
-        // TODO: implement this function.
+        if (distance < 0)
+            throw new InvalidOperationException("Distance cannot be smaller than zero");
+        double consumed = consumeFuel(distance);
+        setCurrentMileage(getCurrentMileage() + distance);
+        MessageWriter.write(
+                "Car id:" + getId() +" is Driving on road ... consumed "
+                + consumed + "L of fuel to travel distance of " + distance + "km."
+        );
     }
 
     @Override
