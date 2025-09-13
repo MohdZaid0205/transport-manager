@@ -9,4 +9,8 @@ public class WarningWriter
     public static void write(String message){
         System.out.println(COLOR + BLACK + "[ WRN ]" + CLEAN + ": " + message);
     }
+
+    public static void draws(String message){
+        System.out.print(COLOR + BLACK + "[ WRN ]" + CLEAN + ": " + message);
+    }
 }

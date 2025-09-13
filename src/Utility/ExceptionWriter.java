@@ -9,4 +9,8 @@ public class ExceptionWriter
     public static void write(String message){
         System.out.println(COLOR + BLACK + "[ ERR ]" + CLEAN + ": " + message);
     }
+
+    public static void draws(String message){
+        System.out.print(COLOR + BLACK + "[ ERR ]" + CLEAN + ": " + message);
+    }
 }

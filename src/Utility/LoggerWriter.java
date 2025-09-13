@@ -9,4 +9,8 @@ public class LoggerWriter
     public static void write(String message){
         System.out.println(COLOR + BLACK + "[ LOG ]" + CLEAN + ": " + message);
     }
+
+    public static void draws(String message){
+        System.out.print(COLOR + BLACK + "[ LOG ]" + CLEAN + ": " + message);
+    }
 }
