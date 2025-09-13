@@ -8,10 +8,10 @@ import Exceptions.InvalidIdentificationException;
 
 public abstract class Vehicle
 {
-    protected String id;
-    protected String model;
-    protected double maxSpeed;
-    protected double currentMileage;
+    private String id;
+    private String model;
+    private double maxSpeed;
+    private double currentMileage;
 
     /**
      * ABC (Abstract Base Class) Vehicle to provide basic functionalities.
@@ -22,7 +22,7 @@ public abstract class Vehicle
      * @param mileage : double value representing mileage of current Vehicle.
      *
      */
-    public Vehicle(String id, String model, long speed, long mileage)
+    public Vehicle(String id, String model, double speed, double mileage)
             throws InvalidIdentificationException
     {
         IdentityValidator.validate(id);
@@ -46,6 +46,12 @@ public abstract class Vehicle
 
     public String getId() { return id; }
     public String getModel() { return model; }
+    public double getMaxSpeed() { return maxSpeed; }
     public double getCurrentMileage() { return currentMileage; }
+
+    public void setId(String id) { this.id = id; }
+    public void setModel(String model) { this.model = model; }
+    public void setMaxSpeed(double speed) { maxSpeed = speed; }
+    public void setCurrentMileage(double mileage) { currentMileage = mileage; }
 
 }
