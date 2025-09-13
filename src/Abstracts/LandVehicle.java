@@ -28,6 +28,6 @@ public abstract class LandVehicle extends Vehicle
     }
 
 
-    public abstract void move(double distance);
+    public abstract void move(double distance) throws InvalidIdentificationException;
     public abstract double calculateFuelEfficiency();
 }

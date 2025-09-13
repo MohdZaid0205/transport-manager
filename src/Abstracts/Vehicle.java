@@ -1,5 +1,6 @@
 package Abstracts;
 
+import Exceptions.InvalidOperationException;
 import Utility.LoggerWriter;
 import Validators.IdentityValidator;
 import Exceptions.InvalidIdentificationException;
@@ -32,7 +33,7 @@ public abstract class Vehicle
         this.currentMileage = mileage;
     }
 
-    abstract void move(double distance);
+    abstract void move(double distance) throws InvalidOperationException;
     abstract double calculateFuelEfficiency();
     abstract double estimateJourneyTime(double distance);
 
