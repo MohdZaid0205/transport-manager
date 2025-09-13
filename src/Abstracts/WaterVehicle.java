@@ -15,7 +15,7 @@ public abstract class WaterVehicle extends Vehicle{
      * @param mileage : double value representing mileage of current Vehicle.
      * @param sail : boolean value representing that water vehicle has sails.
      */
-    public WaterVehicle(String id, String model, long speed, long mileage, boolean sail)
+    public WaterVehicle(String id, String model, double speed, double mileage, boolean sail)
             throws InvalidIdentificationException
     {
         super(id, model, speed, mileage);
@@ -24,10 +24,12 @@ public abstract class WaterVehicle extends Vehicle{
 
     @Override
     public double estimateJourneyTime(double distance) {
-        return (distance / maxSpeed) * 1.15;
+        return (distance / getMaxSpeed()) * 1.15;
     }
-
 
     public abstract void move(double distance) throws InvalidOperationException;
     public abstract double calculateFuelEfficiency();
+
+    public boolean isHasSail() { return hasSail; }
+    public void setHasSail(boolean sail) { hasSail = sail; }
 }

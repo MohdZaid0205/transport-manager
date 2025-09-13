@@ -16,7 +16,7 @@ public abstract class LandVehicle extends Vehicle
      * @param mileage : double value representing mileage of current Vehicle.
      * @param wheels : int value representing number of wheels in the vehicle.
      */
-    public LandVehicle(String id, String model, long speed, long mileage, int wheels)
+    public LandVehicle(String id, String model, double speed, double mileage, int wheels)
             throws InvalidIdentificationException
     {
         super(id, model, speed, mileage);
@@ -25,10 +25,12 @@ public abstract class LandVehicle extends Vehicle
 
     @Override
     public double estimateJourneyTime(double distance) {
-        return (distance / maxSpeed) * 1.1;
+        return (distance / getMaxSpeed()) * 1.1;
     }
-
 
     public abstract void move(double distance) throws InvalidOperationException;
     public abstract double calculateFuelEfficiency();
+
+    public int getNumWheels() { return numWheels; }
+    public void setNumWheels(int wheels) { numWheels = wheels; }
 }

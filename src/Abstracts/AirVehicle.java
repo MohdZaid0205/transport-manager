@@ -16,7 +16,7 @@ public abstract class AirVehicle extends Vehicle
      * @param mileage : double value representing mileage of current Vehicle.
      * @param altitude : double representing maximum achievable altitude by the vehicle.
      */
-    public AirVehicle(String id, String model, long speed, long mileage, double altitude)
+    public AirVehicle(String id, String model, double speed, double mileage, double altitude)
             throws InvalidIdentificationException
     {
         super(id, model, speed, mileage);
@@ -25,11 +25,12 @@ public abstract class AirVehicle extends Vehicle
 
     @Override
     public double estimateJourneyTime(double distance) {
-        return (distance / maxSpeed) * 0.95;
+        return (distance / getMaxSpeed()) * 0.95;
     }
-
 
     public abstract void move(double distance) throws InvalidOperationException;
     public abstract double calculateFuelEfficiency();
 
+    public double getMaxAltitude() { return maxAltitude; }
+    public void setMaxAltitude(double altitude) { maxAltitude = altitude; }
 }
