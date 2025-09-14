@@ -21,7 +21,7 @@ public class FleetManager
 
     public void removeVehicle(String id) throws InvalidOperationException
     {
-        if (IdentityValidator.validate(id))
+        if (!IdentityValidator.find(id))
             throw new InvalidOperationException("Vehicle id is not valid");
         fleet.removeIf(v -> v.getId().equals(id));
         IdentityValidator.remove(id);
@@ -33,7 +33,7 @@ public class FleetManager
             try{ v.move(distance); }
             catch(Exception exc){
                 ExceptionWriter.write(
-                        "Vehicle id: " + v.getId() + exc.getMessage()
+                        "Vehicle id: " + v.getId() + " " + exc.getMessage()
                 );
             }
         }
@@ -55,9 +55,12 @@ public class FleetManager
 
     public List<Vehicle> searchByType(Class<?> type)
     {
-        return fleet.stream().filter(
-                v -> v.getClass().equals(type)
-        ).collect(Collectors.toList());
+        List<Vehicle> vehicles = new ArrayList<>();
+        for (Vehicle v : fleet) {
+            if (type.isInstance(v))
+                vehicles.add(v);
+        }
+        return vehicles;
     }
 
     public void sortFleetByEfficiency()
@@ -125,5 +128,15 @@ public class FleetManager
         report.append("Vehicles needing maintenance: ").append(maintenanceCount).append("\n");
 
         return report.toString();
+    }
+
+    public Vehicle findVehicle(String id) {
+        Vehicle v = null;
+        for (Vehicle u : fleet) {
+            if (u.getId().equals(id)) {
+                v = u;
+            }
+        }
+        return v;
     }
 }

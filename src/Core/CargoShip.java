@@ -8,6 +8,7 @@ import Exceptions.OverloadException;
 import Interfaces.CargoCarrier;
 import Interfaces.FuelConsumable;
 import Interfaces.Maintainable;
+import Utility.LoggerWriter;
 import Utility.MessageWriter;
 
 public class CargoShip extends WaterVehicle
@@ -53,7 +54,7 @@ public class CargoShip extends WaterVehicle
         double consumed = consumeFuel(distance);
         fuelLevel -= consumed;
         setCurrentMileage(getCurrentMileage() + distance);
-        MessageWriter.write("CargoShip id:" + getId() + " is Sailing with cargo...");
+        LoggerWriter.write("CargoShip id:" + getId() + " is Sailing with cargo...");
     }
 
     @Override
@@ -64,6 +65,22 @@ public class CargoShip extends WaterVehicle
         return 5.0;
     }
 
+    @Override
+    public void printInfo() {
+        System.out.println("\t\t\t\t+-------------+");
+        System.out.println("\t\t\t\t|             | id\t\t\t:" + getId());
+        System.out.println("\t\t\t\t|             | model\t\t:" + getModel());
+        System.out.println("\t\t\t\t|             | speed\t\t:" + getMaxSpeed());
+        System.out.println("\t\t\t\t|  CARGOSHIP  | mileage\t\t:" + getCurrentMileage());
+        System.out.println("\t\t\t\t|  CARGOSHIP  | maintained\t:" + !maintenanceNeeded);
+        System.out.println("\t\t\t\t|  CARGOSHIP  | mileage\t\t:" + getCurrentMileage());
+        System.out.println("\t\t\t\t|  CARGOSHIP  | fuel\t\t:" + getFuelLevel());
+        System.out.println("\t\t\t\t|             | sail\t\t:" + getHasSail());
+        System.out.println("\t\t\t\t|             | c capacity\t:" + cargoCapacity );
+        System.out.println("\t\t\t\t|             | c contains\t:" + currentCargo);
+        System.out.println("\t\t\t\t+-------------+");
+    }
+
     // implementation for FuelConsumable interface and it deals on fuelLevel
 
     @Override
@@ -71,7 +88,8 @@ public class CargoShip extends WaterVehicle
     {
         if (getHasSail())
             throw new InvalidOperationException(
-                    "cannot refuel cargo which runs on sails."
+                    "Cargo Ship id:" + getId() +
+                    " cannot refuel cargo which runs on sails."
             );
         if (amount <= 0)
             throw new InvalidOperationException(
@@ -101,7 +119,7 @@ public class CargoShip extends WaterVehicle
     @Override
     public void scheduleMaintenance() { maintenanceNeeded = true; }
     @Override
-    public boolean needsMaintenance() { return maintenanceNeeded; }
+    public boolean needsMaintenance() { return getCurrentMileage() > 10000; }
 
     @Override
     public void performMaintenance()
@@ -109,6 +127,7 @@ public class CargoShip extends WaterVehicle
         if (needsMaintenance())
             MessageWriter.write("Maintenance performed for CargoShip id:" + getId());
         maintenanceNeeded = false;
+        setCurrentMileage(0x0000);
     }
 
     // implementation for CargoCarrier Interface method works with cargo*.

@@ -9,6 +9,7 @@ import Interfaces.CargoCarrier;
 import Interfaces.FuelConsumable;
 import Interfaces.Maintainable;
 import Interfaces.PassengerCarrier;
+import Utility.LoggerWriter;
 import Utility.MessageWriter;
 
 public class Bus extends LandVehicle
@@ -63,11 +64,28 @@ public class Bus extends LandVehicle
         double consumed = consumeFuel(distance);
         fuelLevel -= consumed;
         setCurrentMileage(getCurrentMileage() + distance);
-        MessageWriter.write("Bus id:" + getId() + " is Transporting passengers and cargo...");
+        LoggerWriter.write("Bus id:" + getId() + " is Transporting passengers and cargo...");
     }
 
     @Override
     public double calculateFuelEfficiency() { return 10.0; }
+
+    @Override
+    public void printInfo() {
+        System.out.println("\t\t\t\t+-------------+");
+        System.out.println("\t\t\t\t|             | id\t\t\t:" + getId());
+        System.out.println("\t\t\t\t|             | model\t\t:" + getModel());
+        System.out.println("\t\t\t\t|             | speed\t\t:" + getMaxSpeed());
+        System.out.println("\t\t\t\t|     BUS     | mileage\t\t:" + getCurrentMileage());
+        System.out.println("\t\t\t\t|     BUS     | maintained\t:" + !maintenanceNeeded);
+        System.out.println("\t\t\t\t|     BUS     | mileage\t\t:" + getCurrentMileage());
+        System.out.println("\t\t\t\t|     BUS     | fuel\t\t:" + getFuelLevel());
+        System.out.println("\t\t\t\t|     BUS     | p capacity\t:" + passengerCapacity);
+        System.out.println("\t\t\t\t|             | p contains\t:" + currentPassengers);
+        System.out.println("\t\t\t\t|             | c capacity\t:" + cargoCapacity );
+        System.out.println("\t\t\t\t|             | c contains\t:" + currentCargo);
+        System.out.println("\t\t\t\t+-------------+");
+    }
 
     // implementation for FuelConsumable interface and it deals on fuelLevel
 
@@ -100,7 +118,7 @@ public class Bus extends LandVehicle
     @Override
     public void scheduleMaintenance() { maintenanceNeeded = true; }
     @Override
-    public boolean needsMaintenance() { return maintenanceNeeded; }
+    public boolean needsMaintenance() { return getCurrentMileage() > 10000; }
 
     @Override
     public void performMaintenance()
@@ -108,6 +126,7 @@ public class Bus extends LandVehicle
         if (needsMaintenance())
             MessageWriter.write("Maintenance performed for bus id:" + getId());
         maintenanceNeeded = false;
+        setCurrentMileage(0x0000);
     }
 
     // implementations for PassengerCarrier methods which works on passenger*.

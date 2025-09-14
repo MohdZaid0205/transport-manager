@@ -9,6 +9,7 @@ import Interfaces.CargoCarrier;
 import Interfaces.FuelConsumable;
 import Interfaces.Maintainable;
 import Interfaces.PassengerCarrier;
+import Utility.LoggerWriter;
 import Utility.MessageWriter;
 
 public class Airplane extends AirVehicle
@@ -64,11 +65,28 @@ public class Airplane extends AirVehicle
         double consumed = consumeFuel(distance);
         fuelLevel -= consumed;
         setCurrentMileage(getCurrentMileage() + distance);
-        MessageWriter.write("Airplane id:" + getId() + " is “Flying at " + getMaxAltitude() + "...");
+        LoggerWriter.write("Airplane id:" + getId() + " is “Flying at " + getMaxAltitude() + "...");
     }
 
     @Override
     public double calculateFuelEfficiency() { return 5.0; }
+
+    @Override
+    public void printInfo() {
+        System.out.println("\t\t\t\t+-------------+");
+        System.out.println("\t\t\t\t|             | id\t\t\t:" + getId());
+        System.out.println("\t\t\t\t|             | model\t\t:" + getModel());
+        System.out.println("\t\t\t\t|             | speed\t\t:" + getMaxSpeed());
+        System.out.println("\t\t\t\t|   AIRPLANE  | mileage\t\t:" + getCurrentMileage());
+        System.out.println("\t\t\t\t|   AIRPLANE  | maintained\t:" + !maintenanceNeeded);
+        System.out.println("\t\t\t\t|   AIRPLANE  | mileage\t\t:" + getCurrentMileage());
+        System.out.println("\t\t\t\t|   AIRPLANE  | fuel\t\t:" + getFuelLevel());
+        System.out.println("\t\t\t\t|   AIRPLANE  | p capacity\t:" + passengerCapacity);
+        System.out.println("\t\t\t\t|             | p contains\t:" + currentPassengers);
+        System.out.println("\t\t\t\t|             | c capacity\t:" + cargoCapacity );
+        System.out.println("\t\t\t\t|             | c contains\t:" + currentCargo);
+        System.out.println("\t\t\t\t+-------------+");
+    }
 
     // implementation for FuelConsumable interface and it deals on fuelLevel
 
@@ -101,7 +119,7 @@ public class Airplane extends AirVehicle
     @Override
     public void scheduleMaintenance() { maintenanceNeeded = true; }
     @Override
-    public boolean needsMaintenance() { return maintenanceNeeded; }
+    public boolean needsMaintenance() { return getCurrentMileage() > 10000; }
 
     @Override
     public void performMaintenance()
@@ -109,6 +127,7 @@ public class Airplane extends AirVehicle
         if (needsMaintenance())
             MessageWriter.write("Maintenance performed for airplane id:" + getId());
         maintenanceNeeded = false;
+        setCurrentMileage(0x0000);
     }
 
     // implementations for PassengerCarrier methods which works on passenger*.

@@ -8,6 +8,7 @@ import Exceptions.OverloadException;
 import Interfaces.FuelConsumable;
 import Interfaces.Maintainable;
 import Interfaces.PassengerCarrier;
+import Utility.LoggerWriter;
 import Utility.MessageWriter;
 
 public class Car extends LandVehicle
@@ -53,11 +54,27 @@ public class Car extends LandVehicle
         double consumed = consumeFuel(distance);
         fuelLevel -= consumed;
         setCurrentMileage(getCurrentMileage() + distance);
-        MessageWriter.write("Car id:" + getId() + " is Driving on road ...");
+        LoggerWriter.write("Car id:" + getId() + " is Driving on road ...");
     }
 
     @Override
     public double calculateFuelEfficiency() { return 15.0; }
+
+    @Override
+    public void printInfo() {
+        System.out.println("\t\t\t\t+-------------+");
+        System.out.println("\t\t\t\t|             | id\t\t\t:" + getId());
+        System.out.println("\t\t\t\t|             | model\t\t:" + getModel());
+        System.out.println("\t\t\t\t|             | speed\t\t:" + getMaxSpeed());
+        System.out.println("\t\t\t\t|     CAR     | mileage\t\t:" + getCurrentMileage());
+        System.out.println("\t\t\t\t|     CAR     | mileage\t\t:" + getCurrentMileage());
+        System.out.println("\t\t\t\t|     CAR     | maintained\t:" + !maintenanceNeeded);
+        System.out.println("\t\t\t\t|     CAR     | mileage\t\t:" + getCurrentMileage());
+        System.out.println("\t\t\t\t|             | fuel\t\t:" + getFuelLevel());
+        System.out.println("\t\t\t\t|             | p capacity\t:" + passengerCapacity);
+        System.out.println("\t\t\t\t|             | p contains\t:" + currentPassengers);
+        System.out.println("\t\t\t\t+-------------+");
+    }
 
     // implementation for FuelConsumable interface and it deals on fuelLevel
 
@@ -90,7 +107,7 @@ public class Car extends LandVehicle
     @Override
     public void scheduleMaintenance() { maintenanceNeeded = true; }
     @Override
-    public boolean needsMaintenance() { return maintenanceNeeded; }
+    public boolean needsMaintenance() { return getCurrentMileage() > 10000; }
 
     @Override
     public void performMaintenance()
@@ -98,6 +115,7 @@ public class Car extends LandVehicle
         if (needsMaintenance())
             MessageWriter.write("Maintenance performed for car id:" + getId());
         maintenanceNeeded = false;
+        setCurrentMileage(0x0000);
     }
 
     // implementations for PassengerCarrier methods which works on passenger*.
@@ -123,4 +141,6 @@ public class Car extends LandVehicle
             );
         currentPassengers -= count;
     }
+
+
 }

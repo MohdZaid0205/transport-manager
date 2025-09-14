@@ -17,4 +17,5 @@ public class IdentityValidator {
 
     public static void insert(String id) { identity.add(id); }
     public static void remove(String id) { identity.remove(id); }
+    public static boolean find(String id) { return identity.contains(id); }
 }

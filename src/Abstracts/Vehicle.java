@@ -44,6 +44,8 @@ public abstract class Vehicle
         );
     }
 
+    public abstract void printInfo();
+
     public String getId() { return id; }
     public String getModel() { return model; }
     public double getMaxSpeed() { return maxSpeed; }
