@@ -18,7 +18,7 @@ public class Airplane extends AirVehicle
     private double fuelLevel = 0.0;
     private final int passengerCapacity = 200;
     private int currentPassengers = 0;
-    private final double cargoCapacity = 1000.0;
+    private final double cargoCapacity = 10000;
     private double currentCargo = 0;
     private boolean maintenanceNeeded;
 
@@ -79,7 +79,6 @@ public class Airplane extends AirVehicle
         System.out.println("\t\t\t\t|             | speed\t\t:" + getMaxSpeed());
         System.out.println("\t\t\t\t|   AIRPLANE  | mileage\t\t:" + getCurrentMileage());
         System.out.println("\t\t\t\t|   AIRPLANE  | maintained\t:" + !maintenanceNeeded);
-        System.out.println("\t\t\t\t|   AIRPLANE  | mileage\t\t:" + getCurrentMileage());
         System.out.println("\t\t\t\t|   AIRPLANE  | fuel\t\t:" + getFuelLevel());
         System.out.println("\t\t\t\t|   AIRPLANE  | p capacity\t:" + passengerCapacity);
         System.out.println("\t\t\t\t|             | p contains\t:" + currentPassengers);

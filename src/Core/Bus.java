@@ -78,7 +78,6 @@ public class Bus extends LandVehicle
         System.out.println("\t\t\t\t|             | speed\t\t:" + getMaxSpeed());
         System.out.println("\t\t\t\t|     BUS     | mileage\t\t:" + getCurrentMileage());
         System.out.println("\t\t\t\t|     BUS     | maintained\t:" + !maintenanceNeeded);
-        System.out.println("\t\t\t\t|     BUS     | mileage\t\t:" + getCurrentMileage());
         System.out.println("\t\t\t\t|     BUS     | fuel\t\t:" + getFuelLevel());
         System.out.println("\t\t\t\t|     BUS     | p capacity\t:" + passengerCapacity);
         System.out.println("\t\t\t\t|             | p contains\t:" + currentPassengers);

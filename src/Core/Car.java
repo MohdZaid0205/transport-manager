@@ -69,7 +69,6 @@ public class Car extends LandVehicle
         System.out.println("\t\t\t\t|     CAR     | mileage\t\t:" + getCurrentMileage());
         System.out.println("\t\t\t\t|     CAR     | mileage\t\t:" + getCurrentMileage());
         System.out.println("\t\t\t\t|     CAR     | maintained\t:" + !maintenanceNeeded);
-        System.out.println("\t\t\t\t|     CAR     | mileage\t\t:" + getCurrentMileage());
         System.out.println("\t\t\t\t|             | fuel\t\t:" + getFuelLevel());
         System.out.println("\t\t\t\t|             | p capacity\t:" + passengerCapacity);
         System.out.println("\t\t\t\t|             | p contains\t:" + currentPassengers);

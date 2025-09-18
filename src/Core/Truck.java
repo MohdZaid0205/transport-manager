@@ -73,7 +73,6 @@ public class Truck extends LandVehicle
         System.out.println("\t\t\t\t|             | speed\t\t:" + getMaxSpeed());
         System.out.println("\t\t\t\t|    TRUCK    | mileage\t\t:" + getCurrentMileage());
         System.out.println("\t\t\t\t|    TRUCK    | maintained\t:" + !maintenanceNeeded);
-        System.out.println("\t\t\t\t|    TRUCK    | mileage\t\t:" + getCurrentMileage());
         System.out.println("\t\t\t\t|             | fuel\t\t:" + getFuelLevel());
         System.out.println("\t\t\t\t|             | c capacity\t:" + cargoCapacity );
         System.out.println("\t\t\t\t|             | c contains\t:" + currentCargo);

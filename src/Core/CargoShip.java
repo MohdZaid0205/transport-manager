@@ -15,7 +15,7 @@ public class CargoShip extends WaterVehicle
         implements FuelConsumable, Maintainable, CargoCarrier
 {
     private double fuelLevel = 0.0;
-    private final double cargoCapacity = 1000.0;
+    private final double cargoCapacity = 50000;
     private double currentCargo = 0;
     private boolean maintenanceNeeded;
 
@@ -73,7 +73,6 @@ public class CargoShip extends WaterVehicle
         System.out.println("\t\t\t\t|             | speed\t\t:" + getMaxSpeed());
         System.out.println("\t\t\t\t|  CARGOSHIP  | mileage\t\t:" + getCurrentMileage());
         System.out.println("\t\t\t\t|  CARGOSHIP  | maintained\t:" + !maintenanceNeeded);
-        System.out.println("\t\t\t\t|  CARGOSHIP  | mileage\t\t:" + getCurrentMileage());
         System.out.println("\t\t\t\t|  CARGOSHIP  | fuel\t\t:" + getFuelLevel());
         System.out.println("\t\t\t\t|             | sail\t\t:" + getHasSail());
         System.out.println("\t\t\t\t|             | c capacity\t:" + cargoCapacity );
