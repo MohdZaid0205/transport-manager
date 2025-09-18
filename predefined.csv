@@ -1,0 +1,10 @@
+Airplane,A747,Boeing 747,988,12000,75000.5,200,150,1000.0,850.75
+Airplane,A380,Airbus A380,1020,13100,120000.0,200,180,1000.0,200.5
+Truck,T-001,Ford F-150,160,6,85.5,5000.0,500.0
+Truck,T-003,Volvo VNL,145,10,250.7,5000.0,4800.0
+Car,C-201,Toyota Camry,180,4,45.2,5,3
+Car,C-202,Honda Civic,190,4,30.0,5,1
+Bus,B-501,Volvo 9400,120,6,150.0,50,45,500.0,250.5
+Bus,B-502,Mercedes-Benz Tourismo,125,8,180.0,50,50,500.0,300.0
+CargoShip,S-451,Evergreen,45,false,150000.0,50000.0,25000.0
+CargoShip,V-101,Viking Longship,20,true,0.0,50000.0,500.0
