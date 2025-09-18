@@ -17,7 +17,6 @@ public class Main {
     private static MenuWriter menuWriter = new MenuWriter();
     private static Scanner scanner = new Scanner(System.in);
 
-    // ======================= VEHICLE SUBMENU ==========================
     public static void vehicleMenu() {
         MenuWriter vehicleMenu = new MenuWriter();
         vehicleMenu.menu.add("ADD Vehicle");
@@ -34,21 +33,28 @@ public class Main {
                     scanner, Integer.class, "OPTION_: ");
             switch (option) {
                 case 1:
+                    // This now calls the refactored method below
                     Vehicle v = addVehicleMenu();
                     if (v != null) {
-                        manager.addVehicle(v);
-                        LoggerWriter.write("Vehicle ADD Successful");
+                        try {
+                            manager.addVehicle(v);
+                            LoggerWriter.write("Vehicle ADD Successful");
+                        } catch (Exception e) {
+                            WarningWriter.write("Vehicle ADD Failed: " + e.getMessage());
+                        }
                     } else {
-                        WarningWriter.write("Vehicle ADD Failed");
+                        WarningWriter.write("Vehicle ADD Aborted");
                     }
                     break;
                 case 2:
                     String id = removeVehicleMenu();
                     if (id != null) {
-                        manager.removeVehicle(id);
-                        LoggerWriter.write("Vehicle REMOVE Successful");
-                    } else {
-                        WarningWriter.write("Vehicle REMOVE Failed");
+                        try {
+                            manager.removeVehicle(id);
+                            LoggerWriter.write("Vehicle REMOVE Successful");
+                        } catch (Exception e) {
+                            WarningWriter.write("Vehicle REMOVE Failed: " + e.getMessage());
+                        }
                     }
                     break;
                 case 3:
@@ -73,72 +79,9 @@ public class Main {
     }
 
     public static Vehicle addVehicleMenu() {
-        MenuWriter vehicleMenu = new MenuWriter();
-        vehicleMenu.menu.add("CAR");
-        vehicleMenu.menu.add("BUS");
-        vehicleMenu.menu.add("TRUCK");
-        vehicleMenu.menu.add("AIRPLANE");
-        vehicleMenu.menu.add("CARGO SHIP");
-
-        vehicleMenu.write("Select vehicle type to ADD");
-
-        int vType = (int) InputWriter.safeIn(
-                scanner, Integer.class, "Vehicle TYPE\t\t:");
-
-        if (vType < 0 || vType > 5) {
-            ExceptionWriter.write("Invalid Vehicle Type, aborting [Add Vehicle]");
-            return null;
-        }
-
-        String id = (String) InputWriter.safeIn(
-                scanner, String.class, "Vehicle ID\t\t\t:");
-
-        try {
-            IdentityValidator.validate(id);
-        } catch (InvalidIdentificationException e) {
-            ExceptionWriter.write(e.getMessage());
-            return null;
-        }
-
-        String model = (String) InputWriter.safeIn(
-                scanner, String.class, "Vehicle MODEL\t\t:");
-        double speed = (double) InputWriter.safeIn(
-                scanner, Double.class, "Vehicle SPEED\t\t:");
-        double mileage = (double) InputWriter.safeIn(
-                scanner, Double.class, "Vehicle MILEAGE\t\t:");
-
-        Vehicle vehicle = null;
-
-        switch (vType) {
-            case 1:
-                vehicle = new Car(id, model, speed, mileage);
-                break;
-            case 2:
-            case 3:
-                int wheels = (int) InputWriter.safeIn(
-                        scanner, Integer.class, "Vehicle WHEELS\t\t:");
-                if (vType == 2)
-                    vehicle = new Bus(id, model, speed, mileage, wheels);
-                else
-                    vehicle = new Truck(id, model, speed, mileage, wheels);
-                break;
-            case 4:
-                double altitude = (double) InputWriter.safeIn(
-                        scanner, Double.class, "Vehicle ALTITUDE\t:");
-                vehicle = new Airplane(id, model, speed, mileage, altitude);
-                break;
-            case 5:
-                boolean sails = (boolean) InputWriter.safeIn(
-                        scanner, Boolean.class, "Vehicle HAS SAILS\t:");
-                vehicle = new CargoShip(id, model, speed, mileage, sails);
-                break;
-            default:
-                WarningWriter.write("Invalid Vehicle Type");
-                break;
-        }
-
-        return vehicle;
+        return VehicleFactory.createFromConsole(scanner);
     }
+
 
     public static String removeVehicleMenu() {
         String id = (String) InputWriter.safeIn(
@@ -198,6 +141,7 @@ public class Main {
         }
     }
 
+    // This method is kept exactly as you provided it.
     public static void maintainVehicles() {
         for (Vehicle v : manager.fleet) {
             if (v instanceof Maintainable) {
@@ -207,7 +151,7 @@ public class Main {
         }
     }
 
-    // ======================= JOURNEY SUBMENU ==========================
+
     public static void journeyMenu() {
         MenuWriter jMenu = new MenuWriter();
         jMenu.menu.add("START Journey for Fleet");
@@ -233,7 +177,6 @@ public class Main {
         }
     }
 
-    // ======================= FLEET SUBMENU ==========================
     public static void fleetMenu() {
         MenuWriter fMenu = new MenuWriter();
         fMenu.menu.add("SAVE Fleet");
@@ -275,7 +218,13 @@ public class Main {
         String path = (String) InputWriter.safeIn(
                 scanner, String.class, "Enter path to SAVE fleet\t:");
 
+        if (manager.fleet == null || manager.fleet.isEmpty()) {
+            WarningWriter.write("Fleet is empty. Nothing to save.");
+            return; // Stops the method here if there's nothing to do
+        }
+
         try {
+            LoggerWriter.write("Saving " + manager.fleet.size() + " vehicles to " + path + "...");
             FleetSerializer.save(manager.fleet, path);
             LoggerWriter.write("Fleet SAVE Successful to " + path);
         } catch (Exception e) {
@@ -295,6 +244,7 @@ public class Main {
         }
     }
 
+    // This method is kept exactly as you provided it.
     public static void showMaintenanceList() {
         LoggerWriter.write("Maintenance List:");
         for (Vehicle v : manager.fleet) {
@@ -314,9 +264,6 @@ public class Main {
         }
     }
 
-
-
-    // ======================= QUERY SUBMENU ==========================
     public static void queryMenu() {
         MenuWriter qMenu = new MenuWriter();
         qMenu.menu.add("SEARCH by ID");
@@ -336,8 +283,8 @@ public class Main {
                     Vehicle v = manager.findVehicle(id);
 
                     if (v != null) {
-                        LoggerWriter.write("Search SUCCESS: Found Vehicle " + v);
-                        v.displayInfo();
+                        LoggerWriter.write("Search SUCCESS: Found Vehicle");
+                        v.printInfo(); // Using printInfo to match your displayFleetReport method
                     } else
                         WarningWriter.write("Search FAIL: No Vehicle with ID " + id);
 
@@ -346,7 +293,6 @@ public class Main {
                     String typeName = (String) InputWriter.safeIn(scanner, String.class, "Enter vehicle type (Car, Bus, Truck, Airplane, CargoShip):");
 
                     try {
-                        // Map string to Class
                         Class<?> typeClass = switch (typeName.toLowerCase()) {
                             case "car" -> Car.class;
                             case "bus" -> Bus.class;
@@ -364,7 +310,7 @@ public class Main {
                             for (Vehicle u : results) {
                                 MessageWriter.write(
                                         "ID: " + u.getId() + ", Model: " + u.getModel() +
-                                        ", Mileage: " + u.getCurrentMileage());
+                                                ", Mileage: " + u.getCurrentMileage());
                             }
                         }
                     } catch (Exception e) {
@@ -384,7 +330,6 @@ public class Main {
         }
     }
 
-    // ======================= MAIN PROGRAM ==========================
     public static void main(String[] args) {
         menuWriter.menu.add("VEHICLE Menu");
         menuWriter.menu.add("JOURNEY Menu");
@@ -396,7 +341,8 @@ public class Main {
         LoggerWriter.write("Fleet Management System STARTED");
         while (running) {
             menuWriter.write("Main Menu:");
-            int option = scanner.nextInt();
+            // Using safeIn here for consistency and to prevent scanner issues.
+            int option = (int) InputWriter.safeIn(scanner, Integer.class, "OPTION_: ");
             switch (option) {
                 case 1:
                     vehicleMenu();
@@ -418,5 +364,6 @@ public class Main {
                     WarningWriter.write("Invalid Main Menu Option");
             }
         }
+        scanner.close();
     }
 }
