@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7af79223-102f-4cc4-b151-667cc9e8938d" name="Changes" comment="final cleanup">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Exception" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="32dtssodZcihCDYpGIWOVlxld9T" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AP Assignment Runner.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mdzai/Assignments/AP Assignment-1/res&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/mdzai/Assignments/AP Assignment-1/src/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;Markdown&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mdzai\Assignments\AP Assignment-1" />
+      <recent name="C:\Users\mdzai\Assignments\AP Assignment-1\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="AP Assignment Runner" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="AP Assignment-1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26574.91" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26574.91" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7af79223-102f-4cc4-b151-667cc9e8938d" name="Changes" comment="" />
+      <created>1757762488795</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1757762488795</updated>
+      <workItem from="1757762490119" duration="36336000" />
+      <workItem from="1757854577832" duration="68000" />
+      <workItem from="1757857231509" duration="1766000" />
+      <workItem from="1758205440499" duration="9442000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial Commit">
+      <option name="closed" value="true" />
+      <created>1757762572242</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1757762572242</updated>
+    </task>
+    <task id="LOCAL-00002" summary="completed abstract class Vehicle">
+      <option name="closed" value="true" />
+      <created>1757765225292</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1757765225292</updated>
+    </task>
+    <task id="LOCAL-00003" summary="completed abstract inheritable Vehicle classes">
+      <option name="closed" value="true" />
+      <created>1757766219481</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1757766219481</updated>
+    </task>
+    <task id="LOCAL-00004" summary="completed interfaces implementation">
+      <option name="closed" value="true" />
+      <created>1757766665869</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1757766665869</updated>
+    </task>
+    <task id="LOCAL-00005" summary="completed interfaces documentations">
+      <option name="closed" value="true" />
+      <created>1757766794822</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1757766794822</updated>
+    </task>
+    <task id="LOCAL-00006" summary="completed abstract with exceptions">
+      <option name="closed" value="true" />
+      <created>1757767405128</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1757767405128</updated>
+    </task>
+    <task id="LOCAL-00007" summary="completed abstract with exceptions">
+      <option name="closed" value="true" />
+      <created>1757767593807</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1757767593807</updated>
+    </task>
+    <task id="LOCAL-00008" summary="implement complete encapsulation">
+      <option name="closed" value="true" />
+      <created>1757769022552</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1757769022552</updated>
+    </task>
+    <task id="LOCAL-00009" summary="implement complete encapsulation in abc">
+      <option name="closed" value="true" />
+      <created>1757769210507</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1757769210507</updated>
+    </task>
+    <task id="LOCAL-00010" summary="make abstract methods in Vehicle public">
+      <option name="closed" value="true" />
+      <created>1757772327886</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1757772327886</updated>
+    </task>
+    <task id="LOCAL-00011" summary="implement Car: LandVehicle">
+      <option name="closed" value="true" />
+      <created>1757772356861</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1757772356861</updated>
+    </task>
+    <task id="LOCAL-00012" summary="implement Car: LandVehicle move method">
+      <option name="closed" value="true" />
+      <created>1757772799130</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1757772799130</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fix mileage initialization">
+      <option name="closed" value="true" />
+      <created>1757773269150</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1757773269150</updated>
+    </task>
+    <task id="LOCAL-00014" summary="completed implementation of Truck: LandVehicle">
+      <option name="closed" value="true" />
+      <created>1757774223387</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1757774223387</updated>
+    </task>
+    <task id="LOCAL-00015" summary="completed implementation of Bus: LandVehicle">
+      <option name="closed" value="true" />
+      <created>1757775255612</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1757775255612</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fixed implementation of Truck: LandVehicle">
+      <option name="closed" value="true" />
+      <created>1757775268830</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1757775268830</updated>
+    </task>
+    <task id="LOCAL-00017" summary="complete implementation of Airplane: AirVehicle">
+      <option name="closed" value="true" />
+      <created>1757775985937</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1757775985937</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fixed strings in Airplane: AirVehicle">
+      <option name="closed" value="true" />
+      <created>1757776749965</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1757776749965</updated>
+    </task>
+    <task id="LOCAL-00019" summary="implemented CargoShip: WaterVehicle">
+      <option name="closed" value="true" />
+      <created>1757776775266</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1757776775266</updated>
+    </task>
+    <task id="LOCAL-00020" summary="fix, fuel consumption direct decrement">
+      <option name="closed" value="true" />
+      <created>1757781051453</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1757781051453</updated>
+    </task>
+    <task id="LOCAL-00021" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1757781064369</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1757781064369</updated>
+    </task>
+    <task id="LOCAL-00022" summary="pattern variable. commit">
+      <option name="closed" value="true" />
+      <created>1757781275346</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1757781275346</updated>
+    </task>
+    <task id="LOCAL-00023" summary="public variable. commit">
+      <option name="closed" value="true" />
+      <created>1757781552608</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1757781552608</updated>
+    </task>
+    <task id="LOCAL-00024" summary="format writer stuff">
+      <option name="closed" value="true" />
+      <created>1757782198183</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1757782198183</updated>
+    </task>
+    <task id="LOCAL-00025" summary="format writer color fixation">
+      <option name="closed" value="true" />
+      <created>1757782594903</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1757782594903</updated>
+    </task>
+    <task id="LOCAL-00026" summary="initial Main Complete">
+      <option name="closed" value="true" />
+      <created>1757783101393</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1757783101393</updated>
+    </task>
+    <task id="LOCAL-00027" summary="no endl print deaw">
+      <option name="closed" value="true" />
+      <created>1757784884337</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1757784884337</updated>
+    </task>
+    <task id="LOCAL-00028" summary="nearly completed">
+      <option name="closed" value="true" />
+      <created>1757845587577</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1757845587577</updated>
+    </task>
+    <task id="LOCAL-00029" summary="bug fix in displaying information">
+      <option name="closed" value="true" />
+      <created>1758210601552</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1758210601552</updated>
+    </task>
+    <task id="LOCAL-00030" summary="initial serialization example">
+      <option name="closed" value="true" />
+      <created>1758210616997</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1758210616997</updated>
+    </task>
+    <task id="LOCAL-00031" summary="a demo presentation file">
+      <option name="closed" value="true" />
+      <created>1758210633444</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1758210633444</updated>
+    </task>
+    <task id="LOCAL-00032" summary="fixed maintainance and report">
+      <option name="closed" value="true" />
+      <created>1758212238679</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1758212238679</updated>
+    </task>
+    <task id="LOCAL-00033" summary="final cleanup">
+      <option name="closed" value="true" />
+      <created>1758214717985</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1758214717985</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="implement complete encapsulation in abc" />
+    <MESSAGE value="make abstract methods in Vehicle public" />
+    <MESSAGE value="implement Car: LandVehicle" />
+    <MESSAGE value="implement Car: LandVehicle move method" />
+    <MESSAGE value="fix mileage initialization" />
+    <MESSAGE value="completed implementation of Truck: LandVehicle" />
+    <MESSAGE value="completed implementation of Bus: LandVehicle" />
+    <MESSAGE value="fixed implementation of Truck: LandVehicle" />
+    <MESSAGE value="complete implementation of Airplane: AirVehicle" />
+    <MESSAGE value="fixed strings in Airplane: AirVehicle" />
+    <MESSAGE value="implemented CargoShip: WaterVehicle" />
+    <MESSAGE value="fix, fuel consumption direct decrement" />
+    <MESSAGE value="initial commit" />
+    <MESSAGE value="pattern variable. commit" />
+    <MESSAGE value="public variable. commit" />
+    <MESSAGE value="format writer stuff" />
+    <MESSAGE value="format writer color fixation" />
+    <MESSAGE value="initial Main Complete" />
+    <MESSAGE value="no endl print deaw" />
+    <MESSAGE value="nearly completed" />
+    <MESSAGE value="bug fix in displaying information" />
+    <MESSAGE value="initial serialization example" />
+    <MESSAGE value="a demo presentation file" />
+    <MESSAGE value="fixed maintainance and report" />
+    <MESSAGE value="final cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="final cleanup" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
