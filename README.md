@@ -1,4 +1,4 @@
-# Transportation Fleet Management System `Assignment - 1`.
+# Transportation Fleet Management System `Assignment`.
 
 This repository contains java source file implemented by [Mohd Zaid]() `2024353` 
 as part of assignment 1 of Advanced programming at **IIIT Delhi**.
