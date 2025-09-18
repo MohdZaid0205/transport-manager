@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7af79223-102f-4cc4-b151-667cc9e8938d" name="Changes" comment="final cleanup">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+    <list default="true" id="7af79223-102f-4cc4-b151-667cc9e8938d" name="Changes" comment="final">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +102,7 @@
       <workItem from="1757762490119" duration="36336000" />
       <workItem from="1757854577832" duration="68000" />
       <workItem from="1757857231509" duration="1766000" />
-      <workItem from="1758205440499" duration="9442000" />
+      <workItem from="1758205440499" duration="9755000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -370,7 +368,23 @@
       <option name="project" value="LOCAL" />
       <updated>1758214717985</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="final">
+      <option name="closed" value="true" />
+      <created>1758214998895</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1758214998895</updated>
+    </task>
+    <task id="LOCAL-00035" summary="final">
+      <option name="closed" value="true" />
+      <created>1758215007089</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1758215007089</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,7 +402,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="implement complete encapsulation in abc" />
     <MESSAGE value="make abstract methods in Vehicle public" />
     <MESSAGE value="implement Car: LandVehicle" />
     <MESSAGE value="implement Car: LandVehicle move method" />
@@ -413,7 +426,8 @@
     <MESSAGE value="a demo presentation file" />
     <MESSAGE value="fixed maintainance and report" />
     <MESSAGE value="final cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="final cleanup" />
+    <MESSAGE value="final" />
+    <option name="LAST_COMMIT_MESSAGE" value="final" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

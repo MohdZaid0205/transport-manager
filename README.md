@@ -27,12 +27,13 @@ src/
 ## Compile and Run `[USAGE]`
 
 following code works on current working directory, out of source file.
-```bash
+```text
 # ⚠️ do not cd into the src directory, stay in root of this project.
 # ⚠️ you may need to make build folder using mkdir or touch "bin" folder.
-javac -d bin -sourcepath src src/Main.java  # for class file compilation.
-#in order to use the compiled java file, use java to invoke Main and use bin.
-java -cp bin Main # also sets bin as directory that contains all other .class.
+```
+```bash
+javac -d bin -sourcepath src src/Main.java
+java -cp bin Main
 ```
 
 ## `UML` Diagrams
