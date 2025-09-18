@@ -85,7 +85,6 @@ public class FleetManager
     {
         StringBuilder report = new StringBuilder();
         report.append("Fleet Report:\n");
-        report.append("Total vehicles: ").append(fleet.size()).append("\n");
 
         Map<String, Integer> countByType = new HashMap<>();
         for (Vehicle v : fleet) {
@@ -97,9 +96,16 @@ public class FleetManager
             }
         }
 
-        report.append("Count by type:\n");
+        report.append("\t\t\t\t+-------------+").append("\n");
+        report.append("\t\t\t\t|             | Total vehicles: ").append(fleet.size()).append("\n");
+        report.append("\t\t\t\t+~~~~~~~~~~~~~+ Count by type:\n");
+
+
         for (String type : countByType.keySet()) {
-            report.append(" - ").append(type).append(": ").append(countByType.get(type)).append("\n");
+            report.append("\t\t\t\t|   REPORT    |  -> ")
+                    .append(type).append(": ")
+                    .append(countByType.get(type))
+                    .append("\n");
         }
 
         double totalEfficiency = 0;
@@ -109,13 +115,11 @@ public class FleetManager
             countEfficiency++;
         }
         double averageEfficiency = (countEfficiency > 0) ? totalEfficiency / countEfficiency : 0;
-        report.append("Average efficiency: ").append(averageEfficiency).append(" km/l\n");
 
         double totalMileage = 0;
         for (Vehicle v : fleet) {
             totalMileage += v.getCurrentMileage();
         }
-        report.append("Total mileage: ").append(totalMileage).append(" km\n");
 
         int maintenanceCount = 0;
         for (Vehicle v : fleet) {
@@ -125,7 +129,10 @@ public class FleetManager
                 }
             }
         }
-        report.append("Vehicles needing maintenance: ").append(maintenanceCount).append("\n");
+
+        report.append("\t\t\t\t+~~~~~~~~~~~~~+ Average efficiency: ").append(averageEfficiency).append(" km/l\n");
+        report.append("\t\t\t\t|             | Total mileage: ").append(totalMileage).append(" km\n");
+        report.append("\t\t\t\t+-------------+ Vehicles needing maintenance: ").append(maintenanceCount).append("\n");
 
         return report.toString();
     }

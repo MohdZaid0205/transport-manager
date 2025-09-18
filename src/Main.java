@@ -146,7 +146,6 @@ public class Main {
         for (Vehicle v : manager.fleet) {
             if (v instanceof Maintainable) {
                 ((Maintainable) v).performMaintenance();
-                LoggerWriter.write("Maintenance done for Vehicle ID: " + v.getId());
             }
         }
     }
@@ -262,6 +261,7 @@ public class Main {
         for (Vehicle v : manager.fleet) {
             v.printInfo();
         }
+        MessageWriter.write(manager.generateReport());
     }
 
     public static void queryMenu() {
