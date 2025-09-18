@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>Core.Airplane</OriginalElement>
+  <nodes>
+    <node x="-209.97733076149325" y="199.54859714182447">Core.Truck</node>
+    <node x="264.2684295497592" y="138.75128015373969">Core.CargoShip</node>
+    <node x="204.47249301146712" y="-1.7361019777536413">Abstracts.WaterVehicle</node>
+    <node x="76.79428408928874" y="103.6783665232638">Core.Airplane</node>
+    <node x="-238.14422052071257" y="-46.736219673382124">Abstracts.LandVehicle</node>
+    <node x="-18.593552383997533" y="-114.09239435843224">Abstracts.Vehicle</node>
+    <node x="15.145141716995099" y="-11.249321268398901">Abstracts.AirVehicle</node>
+    <node x="-128.2378230427849" y="54.04339215401477">Core.Bus</node>
+    <node x="-285.85163149896175" y="102.73676945254016">Core.Car</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Core.Airplane" target="Abstracts.AirVehicle" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="54.14914237229364" y="14.0" />
+    </edge>
+    <edge source="Abstracts.WaterVehicle" target="Abstracts.Vehicle" relationship="GENERALIZATION">
+      <point x="-4.930114671424235E-4" y="-17.999898022246356" />
+      <point x="287.972" y="-55.5" />
+      <point x="-48.0" y="-55.5" />
+      <point x="-48.0" y="-100.092" />
+      <point x="-55.50044761600247" y="3.9435843224566725E-4" />
+    </edge>
+    <edge source="Core.Bus" target="Abstracts.LandVehicle" relationship="GENERALIZATION">
+      <point x="-1.769572150891463E-4" y="-14.000392154014762" />
+      <point x="-88.738" y="22.0" />
+      <point x="-158.644" y="22.0" />
+      <point x="2.205207125598463E-4" y="18.000219673382126" />
+    </edge>
+    <edge source="Abstracts.LandVehicle" target="Abstracts.Vehicle" relationship="GENERALIZATION">
+      <point x="79.50022052071256" y="2.196733821229202E-4" />
+      <point x="-48.0" y="-28.736" />
+      <point x="-48.0" y="-100.092" />
+      <point x="-55.50044761600247" y="3.9435843224566725E-4" />
+    </edge>
+    <edge source="Core.CargoShip" target="Abstracts.WaterVehicle" relationship="GENERALIZATION">
+      <point x="-48.295936538292096" y="-18.0" />
+      <point x="0.0" y="18.000000000000007" />
+    </edge>
+    <edge source="Abstracts.AirVehicle" target="Abstracts.Vehicle" relationship="GENERALIZATION">
+      <point x="-64.5001417169951" y="3.212683988991216E-4" />
+      <point x="-48.0" y="2.7509999999999977" />
+      <point x="-48.0" y="-100.092" />
+      <point x="-55.50044761600247" y="3.9435843224566725E-4" />
+    </edge>
+    <edge source="Core.Truck" target="Abstracts.LandVehicle" relationship="GENERALIZATION">
+      <point x="3.307614932452907E-4" y="-14.999597141824466" />
+      <point x="-158.977" y="22.0" />
+      <point x="-158.644" y="22.0" />
+      <point x="2.205207125598463E-4" y="18.000219673382126" />
+    </edge>
+    <edge source="Core.Car" target="Abstracts.LandVehicle" relationship="GENERALIZATION">
+      <point x="-3.6850103825258884E-4" y="-17.999769452540164" />
+      <point x="-239.852" y="22.0" />
+      <point x="-158.644" y="22.0" />
+      <point x="2.205207125598463E-4" y="18.000219673382126" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.96" showDependencies="false" x="87.12499999999994" y="110.08333333333337" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>protected</VISIBILITY>
+</Diagram>
+
