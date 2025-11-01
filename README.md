@@ -30,18 +30,43 @@ src/
 ## Compile and Run `[USAGE]`
 
 following code works on current working directory, out of source file.
-```bash
+```text
 # ⚠️ do not cd into the src directory, stay in root of this project.
 # ⚠️ you may need to make build folder using mkdir or touch "bin" folder.
-javac -d bin -sourcepath src src/Main.java  # for class file compilation.
-#in order to use the compiled java file, use java to invoke Main and use bin.
-java -cp bin Main # also sets bin as directory that contains all other .class.
+```
+```bash
+javac -d bin -sourcepath src src/Main.java
+java -cp bin Main
 ```
 
-## `UML` Diagrams
+## `UML` Diagrams & Explanations
 
+
+### Inheritance
 following diagram explains relations between `ABCs` and their implementations.
 ![ABC DIAGRAM](res/AbstractInheritance.png)
 
+> This system uses inheritance to create a family tree of vehicles,
+starting with a general Vehicle blueprint and branching into specific
+types like `LandVehicle`, `Car`, and `Truck`.
+
+### Interfaces
 following diagram explains relations between `Interfaces` and their implementations.
 ![INT DIAGRAM](res/InterfacesImplementation.png)
+
+> Interfaces like CargoCarrier or FuelConsumable act like plug-ins.
+They give specific abilities only to the vehicles that need them,
+keeping the code clean and organized.
+
+### Polymorphism
+
+> We can issue a single command like move() to the entire fleet.
+Polymorphism ensures each vehicle correctly performs its unique
+action—whether it's driving, flying, or sailing.
+other functions such as printing and all abstract Vehicle methods 
+also show Polymorphism.
+
+### Exception Handling
+
+>nstead of crashing, the program uses custom exceptions to handle errors gracefully.
+It gives specific warnings for impossible actions, like overloading a truck or running out of fuel.
