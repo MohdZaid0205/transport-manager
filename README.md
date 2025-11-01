@@ -5,10 +5,13 @@ as part of assignment 1 of Advanced programming at **IIIT Delhi**.
 
 ## Overview 
 
-Tihis program is a Java-based simulation of a transportation fleet management
+This program is a Java-based simulation of a transportation fleet management
 system for a logistics company. The system is designed to manage a diverse
 fleet of vehicles operating across land, air, and water, including cars, trucks,
 buses, airplanes, and cargo ships.
+
+Project uses ArrayList<T> generic types to store all required information about vehicles.
+along with Set<T> and Map<K,V> generic types to store unique and key-value pair information.
 
 ## Project `Structure`.
 
