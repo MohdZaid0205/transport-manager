@@ -1,12 +1,10 @@
 import Abstracts.*;
 import Core.*;
-import Exceptions.*;
 import Interfaces.CargoCarrier;
 import Interfaces.FuelConsumable;
 import Interfaces.Maintainable;
 import Utility.*;
 import Validators.*;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -141,7 +139,6 @@ public class Main {
         }
     }
 
-    // This method is kept exactly as you provided it.
     public static void maintainVehicles() {
         for (Vehicle v : manager.fleet) {
             if (v instanceof Maintainable) {
@@ -176,12 +173,85 @@ public class Main {
         }
     }
 
+    public static void sortingMenu(){
+        MenuWriter sMenu = new MenuWriter();
+        sMenu.menu.add("SORT by ID");
+        sMenu.menu.add("SORT by Model");
+        sMenu.menu.add("SORT by Mileage");
+        sMenu.menu.add("SORT by Efficiency");
+        sMenu.menu.add("BACK to Fleet Menu");
+        sMenu.write("Sorting Menu:");
+
+        int option = (int) InputWriter.safeIn(
+                scanner, Integer.class, "OPTION_: ");
+        switch (option) {
+            case 1:
+                manager.sortFleetById();
+                LoggerWriter.write("Fleet SORTED by ID");
+                break;
+            case 2:
+                manager.sortFleetByModel();
+                LoggerWriter.write("Fleet SORTED by Model");
+                break;
+            case 3:
+                LoggerWriter.write("Fleet SORT by Mileage NOT YET IMPLEMENTED");
+                break;
+            case 4:
+                manager.sortFleetByEfficiency();
+                LoggerWriter.write("Fleet SORTED by Efficiency");
+                break;
+            case 5:
+                LoggerWriter.write("Returning to FLEET Menu");
+                break;
+            default:
+                WarningWriter.write("Invalid Sorting Menu Option");
+        }
+    }
+
+    public static void showAnalysisReport() {
+        LoggerWriter.write("Fleet Analysis Report:");
+        Vehicle fastest = manager.getVehicalWithMaximumSpeed();
+        Vehicle slowest = manager.getVehicleWithMinimumSpeed();
+        Vehicle highestMileage = manager.getVehicleWithMaximumMileage();
+        Vehicle lowestMileage = manager.getVehicleWithMinimumMileage();
+        Vehicle mostEfficient = manager.getVehicleWithMaximumEfficiency();
+        Vehicle leastEfficient = manager.getVehicleWithMinimumEfficiency();
+
+        if (fastest != null) {
+            MessageWriter.write("Fastest Vehicle ID: " + fastest.getId() +
+                    " with Speed: " + fastest.getMaxSpeed());
+        }
+        if (slowest != null) {
+            MessageWriter.write("Slowest Vehicle ID: " + slowest.getId() +
+                    " with Speed: " + slowest.getMaxSpeed());
+        }
+        if (highestMileage != null) {
+            MessageWriter.write("Highest Mileage Vehicle ID: " + highestMileage.getId() +
+                    " with Mileage: " + highestMileage.getCurrentMileage());
+        }
+        if (lowestMileage != null) {
+            MessageWriter.write("Lowest Mileage Vehicle ID: " + lowestMileage.getId() +
+                    " with Mileage: " + lowestMileage.getCurrentMileage());
+        }
+        if (mostEfficient != null) {
+            MessageWriter.write("Most Efficient Vehicle ID: " + mostEfficient.getId() +
+                    " with Efficiency: " + mostEfficient.calculateFuelEfficiency());
+        }
+        if (leastEfficient != null) {
+            MessageWriter.write("Least Efficient Vehicle ID: " + leastEfficient.getId() +
+                    " with Efficiency: " + leastEfficient.calculateFuelEfficiency());
+        }
+
+    }
+
     public static void fleetMenu() {
         MenuWriter fMenu = new MenuWriter();
         fMenu.menu.add("SAVE Fleet");
         fMenu.menu.add("LOAD Fleet");
         fMenu.menu.add("MAINTENANCE List");
         fMenu.menu.add("DISPLAY Info/Report");
+        fMenu.menu.add("SORT Fleet");
+        fMenu.menu.add("ANALYSE Fleet");
         fMenu.menu.add("BACK to Main Menu");
 
         boolean loop = true;
@@ -204,6 +274,12 @@ public class Main {
                     displayFleetReport();
                     break;
                 case 5:
+                    sortingMenu();
+                    break;
+                case 6:
+                    showAnalysisReport();
+                    break;
+                case 7:
                     LoggerWriter.write("Returning to MAIN Menu");
                     loop = false;
                     break;
@@ -243,7 +319,7 @@ public class Main {
         }
     }
 
-    // This method is kept exactly as you provided it.
+
     public static void showMaintenanceList() {
         LoggerWriter.write("Maintenance List:");
         for (Vehicle v : manager.fleet) {
@@ -284,7 +360,7 @@ public class Main {
 
                     if (v != null) {
                         LoggerWriter.write("Search SUCCESS: Found Vehicle");
-                        v.printInfo(); // Using printInfo to match your displayFleetReport method
+                        v.printInfo();
                     } else
                         WarningWriter.write("Search FAIL: No Vehicle with ID " + id);
 
@@ -341,7 +417,6 @@ public class Main {
         LoggerWriter.write("Fleet Management System STARTED");
         while (running) {
             menuWriter.write("Main Menu:");
-            // Using safeIn here for consistency and to prevent scanner issues.
             int option = (int) InputWriter.safeIn(scanner, Integer.class, "OPTION_: ");
             switch (option) {
                 case 1:

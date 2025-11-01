@@ -18,11 +18,8 @@ public class FleetSerializer {
         }
     }
 
-    /**
-     * This is the complete version that handles ALL vehicle types.
-     */
+
     private static String vehicleToCsv(Vehicle v) {
-        // --- THIS IS THE PART THAT WAS INCOMPLETE ---
         if (v instanceof Airplane) {
             Airplane plane = (Airplane) v;
             return String.join(",",
@@ -89,7 +86,6 @@ public class FleetSerializer {
             );
         }
 
-        // Return empty for any type not explicitly handled
         return "";
     }
 

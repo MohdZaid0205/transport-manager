@@ -4,7 +4,6 @@ import Interfaces.FuelConsumable;
 import Interfaces.Maintainable;
 import Utility.ExceptionWriter;
 import Validators.IdentityValidator;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,9 +13,6 @@ import java.util.stream.Collectors;
 public class FleetManager
 {
     public ArrayList<Vehicle> fleet = new ArrayList<>();
-
-    // methods for manipulating fleet and query fleet.
-
     public void addVehicle(Vehicle v) { fleet.add(v); }
 
     public void removeVehicle(String id) throws InvalidOperationException
@@ -63,11 +59,81 @@ public class FleetManager
         return vehicles;
     }
 
+    public Vehicle getVehicalWithMaximumSpeed()
+    {
+        return fleet.stream()
+                    .max((a, b) -> Double.compare(a.getMaxSpeed(), b.getMaxSpeed()))
+                    .orElse(null);
+    }
+
+    public Vehicle getVehicleWithMinimumSpeed()
+    {
+        return fleet.stream()
+                .min((a, b) -> Double.compare(a.getMaxSpeed(), b.getMaxSpeed()))
+                .orElse(null);
+    }
+
+    public Vehicle getVehicleWithMaximumMileage()
+    {
+        return fleet.stream()
+                .max((a, b) -> Double.compare(a.getCurrentMileage(), b.getCurrentMileage()))
+                .orElse(null);
+    }
+
+    public Vehicle getVehicleWithMinimumMileage()
+    {
+        return fleet.stream()
+                .min((a, b) -> Double.compare(a.getCurrentMileage(), b.getCurrentMileage()))
+                .orElse(null);
+    }
+
+    public Vehicle getVehicleWithMaximumEfficiency()
+    {
+        return fleet.stream()
+                .max((a, b) -> Double.compare(a.calculateFuelEfficiency(), b.calculateFuelEfficiency()))
+                .orElse(null);
+    }
+    
+    public Vehicle getVehicleWithMinimumEfficiency()
+    {
+        return fleet.stream()
+                .min((a, b) -> Double.compare(a.calculateFuelEfficiency(), b.calculateFuelEfficiency()))
+                .orElse(null);
+    }
+
+
+    // Fleet sort by efficiency
     public void sortFleetByEfficiency()
     {
         fleet.sort(
                 (a, b) -> Double.compare(
                         b.calculateFuelEfficiency(), a.calculateFuelEfficiency()
+                )
+        );
+    }
+
+    // Fleet sort by id
+    public void sortFleetById()
+    {
+        fleet.sort(
+                (a, b) -> a.getId().compareTo(b.getId())
+        );
+    }
+
+    // Sort by model name
+    public void sortFleetByModel()
+    {
+        fleet.sort(
+                (a, b) -> a.getModel().compareTo(b.getModel())
+        );
+    }
+
+    // Sort fleet by speed
+    public void sortFleetBySpeed()
+    {
+        fleet.sort(
+                (a, b) -> Double.compare(
+                        b.getMaxSpeed(), a.getMaxSpeed()
                 )
         );
     }

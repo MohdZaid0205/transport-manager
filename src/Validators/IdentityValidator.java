@@ -1,10 +1,10 @@
 package Validators;
 
 import Exceptions.InvalidIdentificationException;
-import java.util.ArrayList;
+import java.util.TreeSet;
 
 public class IdentityValidator {
-    private static final ArrayList<String> identity = new ArrayList<>();
+    private static final TreeSet<String> identity = new TreeSet<>();
 
     public static boolean validate(String id) throws InvalidIdentificationException
     {
