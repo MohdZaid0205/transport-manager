@@ -54,7 +54,7 @@ public class CargoShip extends WaterVehicle
         double consumed = consumeFuel(distance);
         fuelLevel -= consumed;
         setCurrentMileage(getCurrentMileage() + distance);
-        LoggerWriter.write("CargoShip id:" + getId() + " is Sailing with cargo...");
+        // LoggerWriter.write("CargoShip id:" + getId() + " is Sailing with cargo...");
     }
 
     @Override

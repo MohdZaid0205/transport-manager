@@ -5,6 +5,7 @@ import Exceptions.InsufficientFuelException;
 import Exceptions.InvalidIdentificationException;
 import Exceptions.InvalidOperationException;
 import Exceptions.OverloadException;
+import Extension.Highway;
 import Interfaces.CargoCarrier;
 import Interfaces.FuelConsumable;
 import Interfaces.Maintainable;
@@ -28,10 +29,10 @@ public class Truck extends LandVehicle
      * @param mileage : double value representing mileage of current Vehicle.
      * @param wheels  : int value representing number of wheels in the vehicle.
      */
-    public Truck(String id, String model, double speed, double mileage, int wheels)
+    public Truck(String id, String model, double speed, double mileage, int wheels, Highway highway)
             throws InvalidIdentificationException
     {
-        super(id, model, speed, mileage, wheels);
+        super(id, model, speed, mileage, wheels, highway);
         maintenanceNeeded = mileage >= 10000;
     }
 
@@ -54,7 +55,7 @@ public class Truck extends LandVehicle
         double consumed = consumeFuel(distance);
         fuelLevel -= consumed;
         setCurrentMileage(getCurrentMileage() + distance);
-        LoggerWriter.write("Truck id:" + getId() + " Hauling Cargo ...");
+        // LoggerWriter.write("Truck id:" + getId() + " Hauling Cargo ...");
     }
 
     @Override

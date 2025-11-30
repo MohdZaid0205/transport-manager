@@ -65,7 +65,7 @@ public class Airplane extends AirVehicle
         double consumed = consumeFuel(distance);
         fuelLevel -= consumed;
         setCurrentMileage(getCurrentMileage() + distance);
-        LoggerWriter.write("Airplane id:" + getId() + " is “Flying at " + getMaxAltitude() + "...");
+        // LoggerWriter.write("Airplane id:" + getId() + " is “Flying at " + getMaxAltitude() + "...");
     }
 
     @Override
