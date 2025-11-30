@@ -20,7 +20,7 @@ public class Highway {
     }
 
     public void unsynchronizedIncrementMileage(int by){
-        this.mileage += by;
+        this.setMileage(this.getMileage() + by);
     }
 
     public synchronized void synchronizedIncrementMileage(int by){

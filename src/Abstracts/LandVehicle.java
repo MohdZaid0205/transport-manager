@@ -39,20 +39,75 @@ public abstract class LandVehicle
     public int getNumWheels() { return numWheels; }
     public void setNumWheels(int wheels) { numWheels = wheels; }
 
-    @Override
-    public void run(){
-        try {
-            for (int i = 0; i < 100000; i++) {
-                this.move(1);
-                this.highway.unsynchronizedIncrementMileage(1);
-                Thread.sleep(0);
-            }
-        } catch (InterruptedException e){
-            ExceptionWriter.write("inturrupted land vehicle id:" + this.getId()
-                + " while running on highway id:" + this.highway.getId()
-            );
-        } finally {
+    private volatile boolean running = false;
+    private volatile boolean paused = false;
+    private volatile boolean useSynchronization = false;
+    private volatile boolean outOfFuel = false;
 
+    public void setUseSynchronization(boolean useSynchronization) {
+        this.useSynchronization = useSynchronization;
+    }
+
+    public void start() {
+        if (!running) {
+            running = true;
+            paused = false;
+            new Thread(this).start();
+        }
+    }
+
+    public void stop() {
+        running = false;
+    }
+
+    public void pause() {
+        paused = true;
+    }
+
+    public void resume() {
+        paused = false;
+    }
+
+    public boolean isOutOfFuel() {
+        return outOfFuel;
+    }
+    
+    public void setOutOfFuel(boolean outOfFuel) {
+        this.outOfFuel = outOfFuel;
+    }
+
+    @Override
+    public void run() {
+        while (running) {
+            try {
+                if (paused || outOfFuel) {
+                    Thread.sleep(100);
+                    continue;
+                }
+
+                double distance = 1.0;
+
+                try {
+                    this.move(distance);
+
+                    if (useSynchronization) {
+                        highway.synchronizedIncrementMileage((int) distance);
+                    } else {
+                        highway.unsynchronizedIncrementMileage((int) distance);
+                    }
+
+                } catch (Exceptions.InsufficientFuelException e) {
+                    outOfFuel = true;
+                } catch (InvalidOperationException e) {
+                    e.printStackTrace();
+                }
+
+                Thread.sleep(1000);
+
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                break;
+            }
         }
     }
 }
