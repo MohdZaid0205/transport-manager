@@ -1,72 +1,27 @@
-# Transportation Fleet Management System `Assignment`.
+# Fleet Highway Simulator
 
-This repository contains java source file implemented by [Mohd Zaid]() `2024353` 
-as part of assignment 1 of Advanced programming at **IIIT Delhi**.
+## How to Run
+1. Open the project in your IDE (IntelliJ IDEA recommended).
+2. Navigate to `src/Main.java`.
+3. Run the `main` method.
+4. The GUI will launch, allowing you to control the simulation.
 
-## Overview 
+## Design Overview
+The system uses a multi-threaded approach where each vehicle runs in its own thread.
+- **Model**: Reuses `Vehicle`, `Car`, `Bus`, `Truck` from `src/Abstracts` and `src/Core`.
+- **Simulation**: `Highway` class manages the shared distance counter. `VehicleThread` handles the execution loop for each vehicle.
+- **UI**: `MainFrame` and `VehiclePanel` provide the graphical interface.
 
-This program is a Java-based simulation of a transportation fleet management
-system for a logistics company. The system is designed to manage a diverse
-fleet of vehicles operating across land, air, and water, including cars, trucks,
-buses, airplanes, and cargo ships.
+## Race Condition
+The "Enable Synchronization" toggle in the GUI controls whether the shared highway distance is updated safely or unsafely.
+- **Unsafe**: Multiple threads increment the counter simultaneously without locks, leading to lost updates.
+- **Safe**: Updates are synchronized, ensuring the total distance is accurate.
 
-Project uses `ArrayList<T>` generic types to store all required information about vehicles.
-along with `Set<T>` and `Map<K,V>` generic types to store unique and key-value pair information.
+## GUI Thread Safety
+Swing components are updated on the Event Dispatch Thread (EDT) to ensure thread safety. `SwingUtilities.invokeLater` is used for updates from vehicle threads.
 
-## Project `Structure`.
+## UML Diagrams
+*(Place UML diagrams in `res/` and link them here)*
 
-The project is organized into packages to ensure a clean separation of concerns
-
-```text
-src/
-├── Abstracts/      # Base abstract classes (Vehicle, LandVehicle, etc.)
-├── Core/           # Concrete vehicle implementations (Car, Truck, etc.)
-├── Exceptions/     # Custom exception classes for error handling
-├── Interfaces/     # Interfaces for modular behaviors
-├── Utility/        # Helper classes (Writers, VehicleFactory, etc.)
-└── Validators/     # Validation logic and other core classes
-```
-
-## Compile and Run `[USAGE]`
-
-following code works on current working directory, out of source file.
-```text
-# ⚠️ do not cd into the src directory, stay in root of this project.
-# ⚠️ you may need to make build folder using mkdir or touch "bin" folder.
-```
-```bash
-javac -d bin -sourcepath src src/Main.java
-java -cp bin Main
-```
-
-## `UML` Diagrams & Explanations
-
-
-### Inheritance
-following diagram explains relations between `ABCs` and their implementations.
-![ABC DIAGRAM](res/AbstractInheritance.png)
-
-> This system uses inheritance to create a family tree of vehicles,
-starting with a general Vehicle blueprint and branching into specific
-types like `LandVehicle`, `Car`, and `Truck`.
-
-### Interfaces
-following diagram explains relations between `Interfaces` and their implementations.
-![INT DIAGRAM](res/InterfacesImplementation.png)
-
-> Interfaces like CargoCarrier or FuelConsumable act like plug-ins.
-They give specific abilities only to the vehicles that need them,
-keeping the code clean and organized.
-
-### Polymorphism
-
-> We can issue a single command like move() to the entire fleet.
-Polymorphism ensures each vehicle correctly performs its unique
-action—whether it's driving, flying, or sailing.
-other functions such as printing and all abstract Vehicle methods 
-also show Polymorphism.
-
-### Exception Handling
-
->nstead of crashing, the program uses custom exceptions to handle errors gracefully.
-It gives specific warnings for impossible actions, like overloading a truck or running out of fuel.
+## Screenshots
+*(Place screenshots in `res/` and link them here)*
